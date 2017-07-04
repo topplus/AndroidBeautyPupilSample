@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">AndroidBeautyPupil</string>
+    <string name="select_pupil">请选择一个瞳孔类型</string>
+    <string name="no_pupil">未检测到瞳孔，请选着正脸分辨率高的图片！</string>
+    <string name="no_permission">授权失败，请填写正确的授权码！</string>
+</resources>

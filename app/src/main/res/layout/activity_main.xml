@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" />
+
+    <Button
+        android:id="@+id/pick_btn"
+        android:layout_width="57dp"
+        android:layout_height="57dp"
+        android:layout_above="@+id/recycler_view"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/circle_button"
+        android:onClick="onClick" />
+
+    <TextView
+        android:id="@+id/list"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/recycler_view"
+        android:layout_alignParentRight="true"
+        android:background="@android:color/background_dark"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:text="列表"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/folder"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_above="@+id/recycler_view"
+        android:layout_alignParentLeft="true"
+        android:background="@android:color/background_dark"
+        android:gravity="center"
+        android:onClick="onClick"
+        android:text="批量"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/control_layout"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:layout_above="@+id/pick_btn"
+        android:orientation="vertical"
+        android:weightSum="2">
+        <!-- 大小 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_scale_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="大小"
+                android:textColor="@android:color/background_dark" />
+
+            <SeekBar
+                android:id="@+id/size_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:max="100"
+                android:progress="100" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/tv_alpha_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="颜色"
+                android:textColor="@android:color/background_dark" />
+
+            <SeekBar
+                android:id="@+id/color_bar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:max="100"
+                android:progress="50" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <uk.co.senab.photoview.PhotoView
+        android:id="@+id/image_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/control_layout"
+        android:layout_marginBottom="10dp"
+        android:scaleType="centerCrop" />
+
+
+    <TextView
+        android:id="@+id/main_tip"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/control_layout"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="请选择一张图片"
+        android:textColor="#91000000"
+        android:textSize="18sp" />
+</RelativeLayout>
